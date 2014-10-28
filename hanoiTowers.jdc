@@ -1,7 +1,6 @@
 println(hanoiTowers(6));
 
 int hanoiTowers(int discs) {
-	int moves = 0;
 	if (discs == 3) {
 		return 7;
 	} else {
