@@ -1,9 +1,21 @@
-println(fibonacci(6));
+println(fibonacciRecursive(6));
+println(fibonacciIterative(6));
 
-int fibonacci(int n) {
+int fibonacciRecursive(int n) {
 	if ((n == 1) || (n == 2)) {
 		return 1;
 	} else {
-		return fibonacci(n - 2) + fibonacci(n - 1);
+		return fibonacciRecursive(n - 2) + fibonacciRecursive(n - 1);
 	}
+}
+
+int fibonacciIterative(int n) {
+	int former = 1;
+	int latest = 1;
+	for (int i = 2; i < n; i++) {
+		int temp = former + latest;
+		former = latest;
+		latest = temp;
+	}
+	return latest;
 }
