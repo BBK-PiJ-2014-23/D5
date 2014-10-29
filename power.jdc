@@ -1,4 +1,5 @@
 println(MathHelper.powIterative(2, 8));
+println(MathHelper.powRecursive(2, 8));
 
 class MathHelper {
 	static int powIterative(int base, int exponent) {
@@ -7,5 +8,13 @@ class MathHelper {
 			result *= base;
 		}
 		return result;
+	}
+	
+	static int powRecursive(int base, int exponent) {
+		if (exponent == 0) {
+			return 1;
+		} else {
+			return base * powRecursive(base, exponent - 1);
+		}
 	}
 }
